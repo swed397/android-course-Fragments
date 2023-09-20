@@ -5,8 +5,8 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class PhoneContact(
+data class PhoneImages(
+    val id: Long,
     val name: String,
-    val phoneNumber: String,
-    val contactPhoto: Bitmap?
+    val image: Bitmap
 ) : Parcelable

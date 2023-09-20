@@ -5,15 +5,16 @@
     android:id="@+id/phone_contacts_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/milk"
+    android:background="@color/light_pink"
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/phone_contacts_recycler"
+        android:id="@+id/images_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:itemCount="4"
-        tools:listitem="@layout/contacts_recycler_view_item" />
+        app:spanCount="5"
+        tools:itemCount="5"
+        tools:listitem="@layout/images_recycler_view_item" />
 
 </LinearLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">android-course-Fragments</string>
+    <string name="phone_contacts_label">Контакты с телефона</string>
+    <string name="images_label">Картинки</string>
 </resources>

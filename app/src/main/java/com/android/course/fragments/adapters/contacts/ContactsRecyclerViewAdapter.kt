@@ -1,4 +1,4 @@
-package com.android.course.fragments.adapters
+package com.android.course.fragments.adapters.contacts
 
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +17,7 @@ class ContactsRecyclerViewAdapter :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactsRecyclerViewHolder {
         val view: View = LayoutInflater.from(parent.context)
-            .inflate(R.layout.recycler_view_item, parent, false)
+            .inflate(R.layout.contacts_recycler_view_item, parent, false)
 
         return ContactsRecyclerViewHolder(view)
     }

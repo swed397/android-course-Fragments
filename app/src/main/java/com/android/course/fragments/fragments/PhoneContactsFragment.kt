@@ -1,4 +1,4 @@
-package com.android.course.fragments
+package com.android.course.fragments.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,16 +7,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.android.course.fragments.MainActivity.Companion.CONTACTS_KEY
-import com.android.course.fragments.adapters.ContactsRecyclerSimpleItemTouchHelper
-import com.android.course.fragments.adapters.ContactsRecyclerViewAdapter
+import com.android.course.fragments.MainActivity.Companion.KEY
+import com.android.course.fragments.R
+import com.android.course.fragments.adapters.contacts.ContactsRecyclerSimpleItemTouchHelper
+import com.android.course.fragments.adapters.contacts.ContactsRecyclerViewAdapter
 import com.android.course.fragments.model.PhoneContact
 
 
 class PhoneContactsFragment : Fragment() {
 
-    //ToDo null, need realisation
-    private lateinit var phoneContacts: Array<PhoneContact>
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ContactsRecyclerViewAdapter
 
@@ -28,8 +27,8 @@ class PhoneContactsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         //ToDo refactor
-        phoneContacts =
-            arguments?.getParcelableArray(CONTACTS_KEY) as Array<PhoneContact>
+        val phoneContacts =
+            arguments?.getParcelableArray(KEY) as Array<PhoneContact>
 
         adapter = ContactsRecyclerViewAdapter()
         adapter.setData(phoneContacts.toList())
