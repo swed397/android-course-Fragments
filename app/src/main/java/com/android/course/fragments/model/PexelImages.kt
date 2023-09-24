@@ -6,8 +6,7 @@ import com.android.course.fragments.repo.Images
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class PhoneImages(
+data class PexelImages(
     val id: Long,
-    val name: String,
     override val image: Bitmap
 ) : Parcelable, Images

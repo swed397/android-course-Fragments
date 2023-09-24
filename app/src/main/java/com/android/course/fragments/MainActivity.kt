@@ -8,7 +8,8 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.android.course.fragments.repo.ContactsRepository
-import com.android.course.fragments.repo.ImagesRepository
+import com.android.course.fragments.repo.PexelImagesRepository
+import com.android.course.fragments.repo.PhoneImagesRepository
 import com.android.course.fragments.utils.FragmentsIndex
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -17,7 +18,8 @@ import com.google.android.material.tabs.TabLayoutMediator
 class MainActivity : AppCompatActivity() {
 
     val contactsRepo: ContactsRepository by lazy { ContactsRepository(contentResolver) }
-    val imagesRepo: ImagesRepository by lazy { ImagesRepository(contentResolver) }
+    val phoneImagesRepo: PhoneImagesRepository by lazy { PhoneImagesRepository(contentResolver) }
+    val pexelImagesRepo: PexelImagesRepository by lazy { PexelImagesRepository() }
     private lateinit var tableLayout: TabLayout
     private lateinit var viewPager: ViewPager2
 
@@ -37,6 +39,9 @@ class MainActivity : AppCompatActivity() {
                 FragmentsIndex.CONTACTS.index -> tab.text = getString(R.string.phone_contacts_label)
                 FragmentsIndex.IMAGES_PHONE.index -> tab.text =
                     getString(R.string.images_label)
+
+                FragmentsIndex.IMAGES_PEXEL.index -> tab.text =
+                    getString(R.string.images_pexel_label)
 
                 else -> throw IllegalStateException("No such fragment")
             }
@@ -59,6 +64,10 @@ class MainActivity : AppCompatActivity() {
             ContextCompat.checkSelfPermission(
                 this,
                 Manifest.permission.READ_MEDIA_VIDEO
+            ) != PackageManager.PERMISSION_GRANTED &&
+            ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.INTERNET
             ) != PackageManager.PERMISSION_GRANTED
         ) {
             ActivityCompat.requestPermissions(
@@ -68,6 +77,7 @@ class MainActivity : AppCompatActivity() {
                     Manifest.permission.READ_EXTERNAL_STORAGE,
                     Manifest.permission.READ_MEDIA_IMAGES,
                     Manifest.permission.READ_MEDIA_VIDEO,
+                    Manifest.permission.INTERNET
                 ).toTypedArray(), 0
             )
         }

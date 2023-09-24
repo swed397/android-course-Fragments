@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.android.course.fragments.R
-import com.android.course.fragments.model.PhoneImages
+import com.android.course.fragments.repo.Images
 
 class ImagesRecyclerViewAdapter :
     RecyclerView.Adapter<ImagesRecyclerViewAdapter.ImagesRecyclerViewHolder>() {
 
-    var phoneImagesList: List<PhoneImages> = emptyList()
+    var phoneImagesList: List<Images> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImagesRecyclerViewHolder {
         val view: View = LayoutInflater.from(parent.context)
@@ -26,7 +26,7 @@ class ImagesRecyclerViewAdapter :
         holder.bind(position)
     }
 
-    fun setData(data: List<PhoneImages>) {
+    fun setData(data: List<Images>) {
         phoneImagesList = data
     }
 

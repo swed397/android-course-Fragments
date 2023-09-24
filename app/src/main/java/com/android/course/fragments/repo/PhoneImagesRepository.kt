@@ -9,9 +9,9 @@ import android.provider.MediaStore
 import android.util.Size
 import com.android.course.fragments.model.PhoneImages
 
-class ImagesRepository(private val contentResolver: ContentResolver) {
+class PhoneImagesRepository(private val contentResolver: ContentResolver): ImageRepo {
 
-    fun getImages(): List<PhoneImages> {
+    override fun getAllImages(): List<PhoneImages> {
         val photosList = mutableListOf<PhoneImages>()
 
         val cursor = contentResolver.query(

@@ -29,7 +29,17 @@ class MainFragmentsStateAdapter(private val activity: MainActivity) :
                 val bundle = Bundle().apply {
                     putParcelableArray(
                         KEY,
-                        activity.imagesRepo.getImages().toTypedArray()
+                        activity.phoneImagesRepo.getAllImages().toTypedArray()
+                    )
+                }
+                ImagesFragment.newInstance().apply { arguments = bundle }
+            }
+
+            FragmentsIndex.IMAGES_PEXEL.index -> {
+                val bundle = Bundle().apply {
+                    putParcelableArray(
+                        KEY,
+                        activity.pexelImagesRepo.getAllImages().toTypedArray()
                     )
                 }
                 ImagesFragment.newInstance().apply { arguments = bundle }

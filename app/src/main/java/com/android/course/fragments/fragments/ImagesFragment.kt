@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.course.fragments.MainActivity.Companion.KEY
 import com.android.course.fragments.R
 import com.android.course.fragments.adapters.images.ImagesRecyclerViewAdapter
-import com.android.course.fragments.model.PhoneImages
+import com.android.course.fragments.repo.Images
 
 
 class ImagesFragment : Fragment() {
@@ -23,7 +23,7 @@ class ImagesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val photoImagesList =
-            arguments?.getParcelableArray(KEY) as Array<PhoneImages>
+            arguments?.getParcelableArray(KEY) as Array<Images>
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.images_recycler_view)
         val adapter = ImagesRecyclerViewAdapter()
