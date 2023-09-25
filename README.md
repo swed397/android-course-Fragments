@@ -7,3 +7,7 @@ Task from android dev course
 
 # Extra
 Сделать третий фрагмент, для загрузки картинок с интернета с использованием retrofit. Реализовать загрузку на background
+
+# Realisation
+https://github.com/swed397/android-course-Fragments/assets/28994194/8260f500-962c-4fb5-82df-bf5b3e379a7f
+
