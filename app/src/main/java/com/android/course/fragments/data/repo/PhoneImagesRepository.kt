@@ -1,4 +1,4 @@
-package com.android.course.fragments.repo
+package com.android.course.fragments.data.repo
 
 import android.content.ContentResolver
 import android.content.ContentUris
@@ -7,11 +7,10 @@ import android.os.Build
 import android.os.CancellationSignal
 import android.provider.MediaStore
 import android.util.Size
-import com.android.course.fragments.model.PhoneImages
+import com.android.course.fragments.domain.model.PhoneImages
 
-class PhoneImagesRepository(private val contentResolver: ContentResolver): ImageRepo {
-
-    override fun getAllImages(): List<PhoneImages> {
+class PhoneImagesRepository(private val contentResolver: ContentResolver) : BaseImageRepo() {
+    override suspend fun getData(): List<Images> {
         val photosList = mutableListOf<PhoneImages>()
 
         val cursor = contentResolver.query(
@@ -29,7 +28,6 @@ class PhoneImagesRepository(private val contentResolver: ContentResolver): Image
 
                 val photoId = cursor.getLong(idColumn)
                 val photoName = cursor.getString(nameColumn)
-
 
                 photosList.add(
                     PhoneImages(

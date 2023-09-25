@@ -1,4 +1,4 @@
-package com.android.course.fragments.model
+package com.android.course.fragments.domain.model
 
 import com.google.gson.annotations.SerializedName
 

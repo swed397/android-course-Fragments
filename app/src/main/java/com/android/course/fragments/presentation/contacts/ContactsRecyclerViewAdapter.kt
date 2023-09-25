@@ -1,4 +1,4 @@
-package com.android.course.fragments.adapters.contacts
+package com.android.course.fragments.presentation.contacts
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.android.course.fragments.R
-import com.android.course.fragments.model.PhoneContact
+import com.android.course.fragments.domain.model.PhoneContact
 
 class ContactsRecyclerViewAdapter :
     RecyclerView.Adapter<ContactsRecyclerViewAdapter.ContactsRecyclerViewHolder>() {

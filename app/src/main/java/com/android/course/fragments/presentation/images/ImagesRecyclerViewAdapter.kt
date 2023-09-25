@@ -1,12 +1,13 @@
-package com.android.course.fragments.adapters.images
+package com.android.course.fragments.presentation.images
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.android.course.fragments.R
-import com.android.course.fragments.repo.Images
+import com.android.course.fragments.data.repo.Images
 
 class ImagesRecyclerViewAdapter :
     RecyclerView.Adapter<ImagesRecyclerViewAdapter.ImagesRecyclerViewHolder>() {
@@ -26,8 +27,10 @@ class ImagesRecyclerViewAdapter :
         holder.bind(position)
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(data: List<Images>) {
         phoneImagesList = data
+        notifyDataSetChanged()
     }
 
     inner class ImagesRecyclerViewHolder(itemView: View) :

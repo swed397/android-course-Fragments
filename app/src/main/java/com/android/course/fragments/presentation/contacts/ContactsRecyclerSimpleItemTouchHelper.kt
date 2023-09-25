@@ -1,4 +1,4 @@
-package com.android.course.fragments.adapters.contacts
+package com.android.course.fragments.presentation.contacts
 
 import android.graphics.Canvas
 import androidx.recyclerview.widget.ItemTouchHelper

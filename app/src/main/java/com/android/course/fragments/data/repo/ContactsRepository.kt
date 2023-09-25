@@ -1,4 +1,4 @@
-package com.android.course.fragments.repo
+package com.android.course.fragments.data.repo
 
 import android.annotation.SuppressLint
 import android.content.ContentResolver
@@ -6,7 +6,7 @@ import android.content.ContentUris
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.provider.ContactsContract
-import com.android.course.fragments.model.PhoneContact
+import com.android.course.fragments.domain.model.PhoneContact
 import java.io.ByteArrayInputStream
 import java.io.InputStream
 
